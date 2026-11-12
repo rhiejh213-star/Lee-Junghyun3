@@ -64,6 +64,9 @@ def get_page(url, params):
             if isinstance(items,dict): items=[items]
             if not isinstance(items,list): raise DataError("항공편 목록 구조 오류")
             return items,int(total)
+        except urllib.error.HTTPError as e:
+            detail=e.read(2000).decode("utf-8","replace").strip()
+            raise DataError(f"공식 API HTTP {e.code}: {detail or e.reason}") from e
         except (urllib.error.URLError,TimeoutError) as e:
             if attempt==2: raise DataError("API 통신 실패: "+str(e)) from e
             time.sleep(2**attempt)
