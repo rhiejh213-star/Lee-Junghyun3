@@ -26,10 +26,12 @@ jobs:
       - name: Run unit tests
         run: python -m unittest discover -s tests -v
       - name: Fetch and validate official IIAC data
+        if: github.event_name != 'push'
         env:
           DATA_GO_KR_SERVICE_KEY: ${{ secrets.DATA_GO_KR_SERVICE_KEY }}
         run: python monitor.py
       - name: Save latest data and compact history
+        if: github.event_name != 'push'
         run: |
           git config user.name 'ICN Flight Monitor'
           git config user.email 'icn-monitor@users.noreply.github.com'
