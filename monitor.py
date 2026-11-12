@@ -27,10 +27,14 @@ def pick(d, *names):
 def parse_dt(v):
     if not v: return None
     s=str(v).strip()
-    for fmt in ("%Y%m%d%H%M%S","%Y%m%d%H%M","%Y-%m-%d %H:%M","%Y-%m-%d %H:%M:%S","%Y/%m/%d %H:%M"):
-        try: return datetime.strptime(s[:len(datetime.now().strftime(fmt))],fmt).replace(tzinfo=KST)
-        except ValueError: pass
     try:
+        if s.isdigit() and len(s)==14:
+            return datetime.strptime(s,"%Y%m%d%H%M%S").replace(tzinfo=KST)
+        if s.isdigit() and len(s)==12:
+            return datetime.strptime(s,"%Y%m%d%H%M").replace(tzinfo=KST)
+        for fmt in ("%Y-%m-%d %H:%M:%S","%Y-%m-%d %H:%M","%Y/%m/%d %H:%M"):
+            try: return datetime.strptime(s,fmt).replace(tzinfo=KST)
+            except ValueError: pass
         d=datetime.fromisoformat(s.replace("Z","+00:00"))
         return d.replace(tzinfo=KST) if d.tzinfo is None else d.astimezone(KST)
     except ValueError: return None
