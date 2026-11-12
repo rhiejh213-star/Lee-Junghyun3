@@ -25,7 +25,7 @@ jobs:
           python-version: '3.12'
       - name: Fetch and validate official IIAC data
         env:
-          DATA_GO_KR_SERVICE_KEY: \${{ secrets.DATA_GO_KR_SERVICE_KEY }}
+          DATA_GO_KR_SERVICE_KEY: ${{ secrets.DATA_GO_KR_SERVICE_KEY }}
         run: python monitor.py
       - name: Save latest data and compact history
         run: |
