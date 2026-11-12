@@ -1,0 +1,36 @@
+name: ICN international passenger flights - 4-hour collection
+on:
+  schedule:
+    - cron: '5 3,7,11,15,19,23 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: icn-flight-monitor
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch and validate official IIAC data
+        env:
+          DATA_GO_KR_SERVICE_KEY: \${{ secrets.DATA_GO_KR_SERVICE_KEY }}
+        run: python monitor.py
+      - name: Save latest data and compact history
+        run: |
+          git config user.name 'ICN Flight Monitor'
+          git config user.email 'icn-monitor@users.noreply.github.com'
+          git add data/latest.json data/latest.md data/history.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data: update ICN flight monitoring snapshot"
+            git push
+          else
+            echo "No data changes to commit."
+          fi
