@@ -1,0 +1,44 @@
+{
+  "airport": "ICN",
+  "scope": "international_passenger",
+  "source": "IIAC official statusOfAllFltDeOdp API; scheduled-time query",
+  "as_of": "2026-11-12T13:58:13.958587+09:00",
+  "window_start": "2026-11-12T08:00:00+09:00",
+  "window_end": "2026-11-12T12:00:00+09:00",
+  "quality": "STATUS_CLASSIFIED",
+  "directions": {
+    "departure": {
+      "planned": 145,
+      "completed_confirmed": 145,
+      "cancelled_confirmed": 0,
+      "delayed_unconfirmed": 0,
+      "pending": 0,
+      "unknown_status": 0,
+      "unresolved": 0,
+      "cancel_rate_pct": 0.0,
+      "observed_at": "2026-11-12T13:58:13.958587+09:00",
+      "reference_7d_avg": null,
+      "delta_7d_pct": null,
+      "baseline_days": 0
+    },
+    "arrival": {
+      "planned": 65,
+      "completed_confirmed": 65,
+      "cancelled_confirmed": 0,
+      "delayed_unconfirmed": 0,
+      "pending": 0,
+      "unknown_status": 0,
+      "unresolved": 0,
+      "cancel_rate_pct": 0.0,
+      "observed_at": "2026-11-12T13:58:13.958587+09:00",
+      "reference_7d_avg": null,
+      "delta_7d_pct": null,
+      "baseline_days": 0
+    }
+  },
+  "limitations": [
+    "완료편은 공식 API의 명시적 출발/도착 상태 기준이며 레이더·관제 실측이 아님",
+    "국내선 제외는 상대 공항 IATA 코드 목록 기준이며 코드셰어 중복 제거는 마스터편명 기준",
+    "7일 기준선은 동일 4시간대의 완전한 7일 자료가 축적된 후 제공"
+  ]
+}
