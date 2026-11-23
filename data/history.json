@@ -1582,5 +1582,29 @@
     "unresolved": 0,
     "cancel_rate_pct": 0.0,
     "observed_at": "2026-11-23T17:29:52.238063+09:00"
+  },
+  "2026-11-23T16:00:00+09:00|departure": {
+    "window_end": "2026-11-23T20:00:00+09:00",
+    "planned": 106,
+    "completed_confirmed": 106,
+    "cancelled_confirmed": 0,
+    "delayed_unconfirmed": 0,
+    "pending": 0,
+    "unknown_status": 0,
+    "unresolved": 0,
+    "cancel_rate_pct": 0.0,
+    "observed_at": "2026-11-23T20:49:38.798342+09:00"
+  },
+  "2026-11-23T16:00:00+09:00|arrival": {
+    "window_end": "2026-11-23T20:00:00+09:00",
+    "planned": 138,
+    "completed_confirmed": 138,
+    "cancelled_confirmed": 0,
+    "delayed_unconfirmed": 0,
+    "pending": 0,
+    "unknown_status": 0,
+    "unresolved": 0,
+    "cancel_rate_pct": 0.0,
+    "observed_at": "2026-11-23T20:49:38.798342+09:00"
   }
 }
