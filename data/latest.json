@@ -2,36 +2,37 @@
   "airport": "ICN",
   "scope": "international_passenger",
   "source": "IIAC official statusOfAllFltDeOdp API; scheduled-time query",
-  "as_of": "2026-11-24T00:57:50.349095+09:00",
-  "window_start": "2026-11-23T20:00:00+09:00",
-  "window_end": "2026-11-24T00:00:00+09:00",
+  "as_of": "2026-11-24T04:58:08.842155+09:00",
+  "window_start": "2026-11-24T00:00:00+09:00",
+  "window_end": "2026-11-24T04:00:00+09:00",
   "quality": "STATUS_CLASSIFIED",
   "directions": {
     "departure": {
-      "planned": 78,
-      "completed_confirmed": 78,
+      "planned": 13,
+      "completed_confirmed": 13,
       "cancelled_confirmed": 0,
       "delayed_unconfirmed": 0,
       "pending": 0,
       "unknown_status": 0,
       "unresolved": 0,
       "cancel_rate_pct": 0.0,
-      "observed_at": "2026-11-24T00:57:50.349095+09:00",
-      "reference_7d_avg": 80,
-      "delta_7d_pct": -2.5
+      "observed_at": "2026-11-24T04:58:08.842155+09:00",
+      "reference_7d_avg": null,
+      "delta_7d_pct": null,
+      "baseline_days": 6
     },
     "arrival": {
-      "planned": 84,
-      "completed_confirmed": 84,
+      "planned": 11,
+      "completed_confirmed": 11,
       "cancelled_confirmed": 0,
       "delayed_unconfirmed": 0,
       "pending": 0,
       "unknown_status": 0,
       "unresolved": 0,
       "cancel_rate_pct": 0.0,
-      "observed_at": "2026-11-24T00:57:50.349095+09:00",
-      "reference_7d_avg": 81,
-      "delta_7d_pct": 3.7
+      "observed_at": "2026-11-24T04:58:08.842155+09:00",
+      "reference_7d_avg": 12.3,
+      "delta_7d_pct": -10.5
     }
   },
   "limitations": [
